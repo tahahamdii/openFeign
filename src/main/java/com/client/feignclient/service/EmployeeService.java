@@ -19,9 +19,14 @@ public class EmployeeService {
     private ModelMapper mapper;
 
     public EmployeeResponse getEmployeeById(int id) {
-        Optional<Employee> employee = employeeRepo.findById(id);
+        Optional<Employee> optionalEmployee = employeeRepo.findById(id);
+
+        // Extract the Employee object from Optional or provide a default value
+        Employee employee = optionalEmployee.orElse(null);
+
+        // Map the Employee object to EmployeeResponse
         EmployeeResponse employeeResponse = mapper.map(employee, EmployeeResponse.class);
+
         return employeeResponse;
     }
-
 }
