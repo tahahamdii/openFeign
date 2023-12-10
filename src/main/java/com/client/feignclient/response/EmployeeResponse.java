@@ -7,6 +7,9 @@ public class EmployeeResponse {
     private String email;
     private String age;
 
+    private AddressResponse addressResponse;
+
+
     public int getId() {
         return id;
     }
@@ -37,5 +40,12 @@ public class EmployeeResponse {
 
     public void setAge(String age) {
         this.age = age;
+    }
+    public AddressResponse getAddressResponse() {
+        return addressResponse;
+    }
+
+    public void setAddressResponse(AddressResponse addressResponse) {
+        this.addressResponse = addressResponse;
     }
 }
